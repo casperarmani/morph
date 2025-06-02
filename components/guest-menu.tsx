@@ -12,13 +12,11 @@ import {
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 import {
-  Link2,
   LogIn,
   Palette,
   Settings2 // Or EllipsisVertical, etc.
 } from 'lucide-react'
 import Link from 'next/link'
-import { ExternalLinkItems } from './external-link-items'
 import { ThemeMenuItems } from './theme-menu-items'
 
 export default function GuestMenu() {
@@ -45,15 +43,6 @@ export default function GuestMenu() {
           </DropdownMenuSubTrigger>
           <DropdownMenuSubContent>
             <ThemeMenuItems />
-          </DropdownMenuSubContent>
-        </DropdownMenuSub>
-        <DropdownMenuSub>
-          <DropdownMenuSubTrigger>
-            <Link2 className="mr-2 h-4 w-4" />
-            <span>Links</span>
-          </DropdownMenuSubTrigger>
-          <DropdownMenuSubContent>
-            <ExternalLinkItems />
           </DropdownMenuSubContent>
         </DropdownMenuSub>
       </DropdownMenuContent>

@@ -48,8 +48,15 @@ export function ModelSelector({ models }: ModelSelectorProps) {
       } catch (e) {
         console.error('Failed to parse saved model:', e)
       }
+    } else {
+      // Set GPT-4.1 as default model when no saved model exists
+      const defaultModel = models.find(model => model.id === 'gpt-4.1')
+      if (defaultModel) {
+        setValue(createModelId(defaultModel))
+        setCookie('selectedModel', JSON.stringify(defaultModel))
+      }
     }
-  }, [])
+  }, [models])
 
   const handleModelSelect = (id: string) => {
     const newValue = id === value ? '' : id
